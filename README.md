@@ -4,12 +4,11 @@ Hello there! Welcome to the **Gate.io Trading Bot** repository. This is an open-
 
 ## Table of Contents
 
-1. [Features](#features)
-2. [Getting Started](#getting-started)
-3. [How It Works](#how-it-works)
-4. [Usage](#usage)
-5. [Warning: Risks of Trading](#warning-risks-of-trading)
-6. [Contributing](#contributing)
+1. [Features](#features-)
+2. [Getting Started](#getting-started-)
+3. [How It Works](#how-it-works-)
+4. [Usage](#usage-)
+5. [Warning: Risks of Trading](#warning-risks-of-trading-️)
 
 ## Features 🌟
 
