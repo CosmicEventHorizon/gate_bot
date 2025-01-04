@@ -14,18 +14,21 @@ Hello there! Welcome to the **Gate.io Trading Bot** repository. This is an open-
 
 The Gate.io Trading Bot offers a range of functionalities to help you manage your trades efficiently:
 
-1. **List all currencies** 📝
+1. **Show current total balance** 💲
+   - Display the available total balance in USDT on your Gate.io wallet.
+
+2. **List all currencies** 📝
    - Display all available currency pairs on Gate.io.
 
-2. **Buy a currency** 💵
+3. **Buy a currency** 💵
    - Specify the currency, amount in USD, and desired price.
    - The bot will place a market buy order at the specified price.
 
-3. **Sell a currency** 💰
+4. **Sell a currency** 💰
    - Specify the currency to sell.
    - The bot will sell all available quantity of the chosen currency at the current market price using a market sell order.
 
-4. **Place an automatic order** ⚙️🔄
+5. **Place an automatic order** ⚙️🔄
    - Enter the currency, buy amount in USD, buy trigger price, and sell trigger price.
    - The bot will continuously monitor the market price:
      - When the market price falls below the buy trigger price, it buys the specified amount of the chosen currency.
@@ -56,14 +59,15 @@ The bot consists of three main files:
 
 ## Usage 📊
 
-Once the bot is running, you'll be presented with a menu offering four choices:
+Once the bot is running, you'll be presented with a menu offering five choices:
 
-1. List all currencies
-2. Buy a currency
-3. Sell a currency
-4. Place an automatic order
+1. Show current total balance
+2. List all currencies
+3. Buy a currency
+4. Sell a currency
+5. Place an automatic order
 
-Enter your choice using numeric input (e.g., `1` for listing currencies) and press Enter to proceed.
+Enter your choice using numeric input (e.g., `2` for listing currencies) and press Enter to proceed.
 
 ## Warning: Risks of Trading ⚠️
 
