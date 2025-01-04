@@ -17,7 +17,24 @@ def gen_sign(API_KEY, API_SECRET, method, url, query_string=None, payload_string
     sign = hmac.new(API_SECRET.encode('utf-8'), s.encode('utf-8'), hashlib.sha512).hexdigest()
     return {'KEY': API_KEY, 'Timestamp': str(t), 'SIGN': sign}
 
-#get all currency pairs
+#feth the total current balance
+def fetch_total_balance(API_KEY, API_SECRET):
+    host = "https://api.gateio.ws"
+    prefix = "/api/v4"
+    headers = {'Accept': 'application/json', 'Content-Type': 'application/json'}
+    url = '/wallet/total_balance'
+    query_param = ''
+
+    #generate signature
+    sign_headers = gen_sign(API_KEY, API_SECRET,'GET', prefix + url, query_param)
+    headers.update(sign_headers)
+
+    #get request
+    response = requests.request('GET', host + prefix + url, headers=headers)
+    return float(response.json()['total']['amount'])
+
+
+#fetch all currency pairs
 def fetch_currecy_pair():
     url = f"{API_BASE_URL}/spot/currency_pairs"
     response = requests.get(url)
@@ -41,12 +58,14 @@ def fetch_asset_amount(API_KEY, API_SECRET, currency):
     host = "https://api.gateio.ws"
     prefix = "/api/v4"
     headers = {'Accept': 'application/json', 'Content-Type': 'application/json'}
-
     url = '/spot/accounts'
     query_param = ''
-    # for `gen_sign` implementation, refer to section `Authentication` above
+    
+    #generatie signature
     sign_headers = gen_sign(API_KEY, API_SECRET,'GET', prefix + url, query_param)
     headers.update(sign_headers)
+    
+    #get request
     response = requests.request('GET', host + prefix + url, headers=headers)
     for coin in response.json():
         if currency == coin['currency']:

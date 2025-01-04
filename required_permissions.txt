@@ -1,0 +1,2 @@
+Spot Trade - Read/Write
+Wallet - Read Only 

@@ -27,24 +27,28 @@ if __name__ == '__main__':
     while True:
         #List menu items
         print("Please choose a transaction:\n")
-        print("1 - List all currencies")
-        print("2 - Buy a currency")
-        print("3 - Sell a currency")
-        print("4 - Place an automatic order\n")
+        print("1 - Show current total balance")
+        print("2 - List all currencies")
+        print("3 - Buy a currency")
+        print("4 - Sell a currency")
+        print("5 - Place an automatic order\n")
         choice = int(input("Choice: "))
         
         #Call function based on choice
         if choice == 1:
-            print(fetch_currecy_pair())
+            print(f"The total balance is: ${fetch_total_balance(API_KEY, API_SECRET)}")
         elif choice == 2:
+            print(fetch_currecy_pair())
+        elif choice == 3:
             currency = input("Currency to buy: ")
             amount = input("Amount to buy in USD: ")
             price = input("Price of " +currency+ " to buy: ")
             print()
             print(buy_currency(API_KEY,API_SECRET,currency,amount,price))
-        elif choice == 3:
+        elif choice == 4:
             currency = input("Currency to sell: ")
             print()
             print(sell_max_currency(API_KEY,API_SECRET,currency))
-        elif choice == 4:
+        elif choice == 5:
             automatic_order(API_KEY,API_SECRET)
+        print()
